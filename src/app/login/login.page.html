@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Wlecom to shopping</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+   <div style="font-size:  100px; text-align: center;">
+    <ion-icon name="person-circle-outline"></ion-icon> 
+   </div>
+  <ion-card>
+    <ion-spinner name="bubbles" color="primary" class="center" *ngIf="progressBar"></ion-spinner>
+    <ion-card-header color="danger">
+      <ion-card-title>Authentifaction </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form name="user" (ngSubmit)="onSubmit()" #formRegister="ngForm" novalidate>
 
+        <ion-item>
+          <ion-input type="text" id="username" placeholder="Enter username" name="username" [(ngModel)]="user.username" #username="ngModel" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="password" id="password" placeholder="Enter password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+        </ion-item>
+
+        <br>
+        <ion-button type="submit" color="primary" fill="solid" size="large" expand="block" [disabled]="username.invalid || password.invalid">Login</ion-button>
+      </form>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

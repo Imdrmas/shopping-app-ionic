@@ -1,0 +1,62 @@
+<ion-content>
+  <div class="header">
+   <h2>Wlecome {{user.username}}</h2>
+   <div class="space-between">
+     <div class="followings">
+       <ion-badge color="danger" mode="ios">42</ion-badge>
+      <p>Abonnés</p>
+     </div>
+     <div class="followings">
+      <ion-badge color="danger" mode="ios">142</ion-badge>
+      <p>Abonnements</p>
+    </div>  
+   </div>
+  </div>
+
+  <div class="flex">
+  <div class="border-blue">
+  <div class="border-white">
+<div class="img-box">
+  <img src="https://img.over-blog-kiwi.com/0/87/20/59/20190804/ob_f940bb_8bf3477e-e55c-4f56-ab33-59d3380f899e.jpeg" alt="">
+</div>
+</div>
+</div>
+</div>
+
+
+<ion-card>
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="https://img.over-blog-kiwi.com/0/87/20/59/20190804/ob_f940bb_8bf3477e-e55c-4f56-ab33-59d3380f899e.jpeg"/>
+    </ion-avatar>
+    <ion-label> <b><h2>{{user.username}}</h2> </b> 
+    <p>Il y a 23 min</p>
+  </ion-label>
+  </ion-item> <br>
+
+  <ion-list>
+  <ion-item lines="none" class="tweet">
+    <ion-label class="ion-text-wrap">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis voluptates eos sit eveniet commodi laborum accusamus porro, beatae non adipisci. Enim explicabo facere harum labore delectus provident ad minus.
+    </ion-label>
+  </ion-item>
+
+  <ion-item *ngFor="let item of carts" lines="inset">
+    <ion-label>{{item.count}}: {{item.name}} - {{item.added | date}}</ion-label>
+    <ion-note slot="end" color="tertiary">{{ (item.price * item.count) | currency:'USD':'symbol' }}</ion-note>
+  </ion-item>
+  
+  <ion-item color="success">
+    Total: <span slot="end">{{total | currency:'USD':'symbol'}} </span>
+  </ion-item>
+
+</ion-list><br>
+
+</ion-card>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar color="danger">
+    <ion-title (click)="logout(user.id)" style="cursor: pointer;"> Logout </ion-title>
+  </ion-toolbar>
+</ion-footer>

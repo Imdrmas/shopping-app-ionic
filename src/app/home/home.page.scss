@@ -1,27 +1,21 @@
-#container {
-  text-align: center;
-
+ion-badge {
+  color: #fff;
   position: absolute;
-  left: 0;
+  top: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: 3;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.category-block {
+  margin-bottom: 4px;
+  margin-top: 15px;
 }
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+.category-banner {
+  border-left: 8px solid var(--ion-color-secondary);
+  background: var(--ion-color-light);
+  height: 40px;
+  padding: 10px;
+  font-weight: 500;
 }

@@ -1,9 +1,61 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content style="padding: 0 16px;" [fullscreen]="true">
+  <div class="header">
+    <h2>Welcome {{username}}</h2>
+  </div>
 
-<ion-content>
+  <div class="flex">
+    <div class="border-blue">
+      <div class="border-white">
+        <div class="img-box">
+          <img style="height: 220px;" src="https://img.over-blog-kiwi.com/0/87/20/59/20190804/ob_f940bb_8bf3477e-e55c-4f56-ab33-59d3380f899e.jpeg">
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div style="padding: 0% 16px;">
+    <ion-button color="success" expand="block" fill="outline" (click)="addShopping(user.id)">Add shopping</ion-button>
+  </div><br>
+
+  <div *ngFor="let item of shoppings; let i = index" class="category-block">
+    <ion-row no-padding class="category-banner" style="background-color: #d5d5d7;">
+      <ion-col size="10" text-left button (click)="toggle(item, item.id, i)" align-self-center>
+        <label tappable>{{item.name}}</label>
+      </ion-col>
+      <ion-col size="2" (click)="addCategory(item.id)">
+        <ion-icon color="danger" name="add-outline" style="font-size: 28px; cursor: pointer; margin-top: -6px;">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-slides [options]="sliderConfigs">
+      <ion-slide *ngFor="let cat of categories; let ii = index">
+
+        <div *ngIf="showIndex ===i && item.expanded" [attr.id]="'undoBtn'+i">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                {{ii+1}} {{cat.name}}
+              </ion-card-title>
+              <ion-card-content>
+                <img src="{{cat.logo}}" alt="img">
+                <ion-button expand="full" color="danger" style="margin-top: 10px;" shape="round"
+                  (click)="addProduct(cat.id)">Add product information</ion-button>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </div>
+
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <p *ngIf="categoryLength == 0" id="emptyMessage">Sorry, nothing in here</p>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar color="danger">
+    <ion-title (click)="logout(user.id)" style="cursor: pointer;"> Logout </ion-title>
+  </ion-toolbar>
+</ion-footer>

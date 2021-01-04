@@ -1,9 +1,41 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>add-product</ion-title>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="secondary">
+      <ion-button fill="outline" (click)="cancel()">
+        <ion-icon slot="start" name="close-outline"></ion-icon>
+        Cancel
+      </ion-button>
+    </ion-buttons>
+    <ion-title> add product </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-spinner name="bubbles" color="primary" class="center" *ngIf="progressBar"></ion-spinner>
+  <ion-card>
+    <ion-card-content>
+      <form name="category" (ngSubmit)="addPRoduct()" #formRegister="ngForm" novalidate>
 
+        <ion-item>
+          <ion-input type="text" name="name" placeholder="Enter category name" [(ngModel)]="product.name" #name="ngModel" required></ion-input>
+        </ion-item><br>
+
+        <ion-item>
+          <ion-input type="text" name="description" placeholder="Enter category description" [(ngModel)]="product.description" #description="ngModel" required></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-input type="text" name="number" placeholder="Enter category price" [(ngModel)]="product.price" #price="ngModel" required></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-input type="text" name="image" placeholder="Enter category image " [(ngModel)]="product.image" #image="ngModel" required></ion-input>
+      </ion-item><br>
+
+
+        <ion-button type="submit" color="primary" fill="solid" size="large" expand="block" 
+        [disabled]="name.invalid || price.invalid || description.invalid || image.invalid">Save</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card> 
 </ion-content>

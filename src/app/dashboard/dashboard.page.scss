@@ -1,0 +1,106 @@
+.header {
+    background: #1abc9c;
+    height: 140px;
+    padding-top: 1px;
+  }
+  .header h2 {
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+  }
+  .header .space-between {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+  }
+  .header .followings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header .followings p {
+    color: #ffffff;
+    margin: 8px 0 0 0;
+  }
+  .img-box {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .border-white {
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    width: fit-content;
+  }
+  .border-blue {
+    border: 7px solid #16a085;
+    border-radius: 50%;
+    width: fit-content;
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    margin-top: -76px;
+  }
+  ion-content {
+    --background: var(--ion-color-light);
+  }
+  .accordoin-list {
+    margin-bottom: 4px;
+    --ion-item-background: #ffffff;
+    .section, .section-active {
+      --min-height: 58px;
+    }
+  }
+  .section {
+    --ion-item-background: #ffffff;
+    --ion-item-color: #000000;
+  }
+  .section-active {
+    --ion-item-background: #ffc400;
+    --ion-item-color: #ffffff;
+    font-weight: 600;
+    ion-icon {
+      color: #ffffff;
+    }
+  }
+  .child-list {
+    padding: 0px;
+    margin:  0px;
+    .child, .child-active {
+      margin-bottom: 2px;
+    }
+  }
+  .child {
+    --ion-item-background: #e8e7e6;
+    --ion-item-color: #000000;
+  }
+  .child-active {
+    --ion-item-background: #fad86b;
+    --ion-item-color: #ffffff;
+    ion-icon {
+      color: #ffffff;
+    }
+  }
+  .padding-list {
+    padding: 0px;
+    margin: 0px;
+  }
+
+.category-block {
+    margin-bottom: 4px;
+  }
+  .category-banner {
+    border-left: 10px solid #1abc9c;
+    background: var(--ion-color-light);
+    height: 40px;
+    padding: 10px;
+    font-weight: 500;
+  }
+#emptyMessage {
+color: #c80c0c;
+background: antiquewhite;
+padding: 10px 25px;
+font-weight: bold;
+}

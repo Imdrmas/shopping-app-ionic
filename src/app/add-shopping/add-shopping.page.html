@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="secondary">
+      <ion-button fill="outline" (click)="cancel()">
+        <ion-icon slot="start" name="close-outline"></ion-icon>
+        Cancel
+      </ion-button>
+    </ion-buttons>
+    <ion-title>add shopping name</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner name="bubbles" color="primary" class="center" *ngIf="progressBar"></ion-spinner>
+  <ion-card>
+    <ion-card-content>
+      <form name="shopping" (ngSubmit)="addShopping()" #formRegister="ngForm" novalidate>
+
+        <ion-item>
+          <ion-input type="text" placeholder="Enter shopping name" name="shopping" [(ngModel)]="shopping.name" #name="ngModel" required></ion-input>
+        </ion-item>
+
+        <br>
+        <ion-button type="submit" color="primary" fill="solid" size="large" expand="block" [disabled]="name.invalid">Save</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card> 
+</ion-content>

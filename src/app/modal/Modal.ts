@@ -3,13 +3,15 @@ export class Cart {
  name: string;
  count: number;
  total: number;
+ price: number;
  added: any;
- products: Product[];
 }
 
 export class Category {
   id: number;
   name: string;
+  logo: string;
+  expanded: boolean;
   products: Product[];
 }
 
@@ -24,12 +26,13 @@ export class Product {
 
 export class Shopping {
     id: number;
+    name: string;
     expanded: boolean;
     categories: Category[];
 }
 
 export class User {
-  id: number;
+  id: any;
   username: string;
   password: string;
   admin: boolean;
